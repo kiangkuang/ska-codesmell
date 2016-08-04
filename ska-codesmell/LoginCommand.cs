@@ -4,13 +4,13 @@ namespace ska_codesmell
 {
     public class LoginCommand
     {
-        private readonly string _name;
-        private readonly string _password;
+        private readonly string _Name;
+        private readonly string _Password;
 
         public LoginCommand(string name, string password)
         {
-            _name = name;
-            _password = password;
+            _Name = name;
+            _Password = password;
         }
 
         private int GetSize()
@@ -18,8 +18,8 @@ namespace ska_codesmell
             return Constants.Header.Length +
                    Constants.SizeLength +
                    Constants.CmdByteLength +
-                   _name.Length + 1 +
-                   _password.Length + 1 +
+                   _Name.Length + 1 +
+                   _Password.Length + 1 +
                    Constants.Footer.Length;
         }
 
@@ -28,9 +28,9 @@ namespace ska_codesmell
             writer.Write(Constants.Header);
             writer.Write(GetSize());
             writer.Write(Constants.CommandCharLogin);
-            writer.Write(_name);
+            writer.Write(_Name);
             writer.Write((char)0x00);
-            writer.Write(_password);
+            writer.Write(_Password);
             writer.Write((char)0x00);
             writer.Write(Constants.Footer);
         }

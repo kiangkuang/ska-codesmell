@@ -4,19 +4,19 @@ namespace ska_codesmell
 {
     public class AddEmployeeCmd
     {
-        private readonly string _name;
-        private readonly string _address;
-        private readonly string _city;
-        private readonly string _state;
-        private readonly int _yearlySalary;
+        private readonly string _Name;
+        private readonly string _Address;
+        private readonly string _City;
+        private readonly string _State;
+        private readonly int _YearlySalary;
 
         public AddEmployeeCmd(string name, string address, string city, string state, int yearlySalary)
         {
-            _name = name;
-            _address = address;
-            _city = city;
-            _state = state;
-            _yearlySalary = yearlySalary;
+            _Name = name;
+            _Address = address;
+            _City = city;
+            _State = state;
+            _YearlySalary = yearlySalary;
         }
 
         private int GetSize()
@@ -24,11 +24,11 @@ namespace ska_codesmell
             return Constants.Header.Length +
                    Constants.SizeLength +
                    Constants.CmdByteLength +
-                   _name.Length + 1 +
-                   _address.Length + 1 +
-                   _city.Length + 1 +
-                   _state.Length + 1 +
-                   _yearlySalary.ToString().Length + 1 +
+                   _Name.Length + 1 +
+                   _Address.Length + 1 +
+                   _City.Length + 1 +
+                   _State.Length + 1 +
+                   _YearlySalary.ToString().Length + 1 +
                    Constants.Footer.Length;
         }
 
@@ -37,15 +37,15 @@ namespace ska_codesmell
             writer.Write(Constants.Header);
             writer.Write(GetSize());
             writer.Write(Constants.CommandCharAdd);
-            writer.Write(_name);
+            writer.Write(_Name);
             writer.Write((char)0x00);
-            writer.Write(_address);
+            writer.Write(_Address);
             writer.Write((char)0x00);
-            writer.Write(_city);
+            writer.Write(_City);
             writer.Write((char)0x00);
-            writer.Write(_state);
+            writer.Write(_State);
             writer.Write((char)0x00);
-            writer.Write(_yearlySalary);
+            writer.Write(_YearlySalary);
             writer.Write((char)0x00);
             writer.Write(Constants.Footer);
         }
