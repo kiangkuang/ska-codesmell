@@ -15,10 +15,14 @@ namespace ska_codesmell
 
         private int GetSize()
         {
-            return Constants.Header.Length + Constants.SizeLength + Constants.CmdByteLength + Constants.Footer.Length +
-                _name.Length + 1 +
-                _password.Length + 1;
+            return Constants.Header.Length +
+                   Constants.SizeLength +
+                   Constants.CmdByteLength +
+                   _name.Length + 1 +
+                   _password.Length + 1 +
+                   Constants.Footer.Length;
         }
+
         public void Write(TextWriter writer)
         {
             writer.Write(Constants.Header);
