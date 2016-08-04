@@ -3,9 +3,9 @@ using System;
 namespace GeneralizationCs
 {
 	/// <summary>
-	/// Summary description for Class1.
+	/// Summary description for Program.
 	/// </summary>
-	class Class1
+	class Program
 	{
 		/// <summary>
 		/// The main entry point for the application.
