@@ -34,10 +34,7 @@ namespace ska_codesmell.UnitTests
 
             string actual = writer.ToString();
 
-            for (int i = 0; i < expected.Length; i++)
-            {
-                Assert.AreEqual(expected[i], actual[i], "comparison failed at byte number " + i);
-            }
+            Assert.AreEqual(expected, actual);
         }
     }
 }
