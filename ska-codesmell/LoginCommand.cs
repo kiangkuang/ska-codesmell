@@ -18,8 +18,8 @@ namespace ska_codesmell
 
 		public LoginCommand(string name, string password)
 		{
-			this._name = name;
-			this._password = password;
+			_name = name;
+			_password = password;
 		}
 
 		private int GetSize() {
