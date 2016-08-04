@@ -1,8 +1,7 @@
 using System.IO;
 using NUnit.Framework;
-using ska_codesmell;
 
-namespace ska_codesmell_test
+namespace ska_codesmell.UnitTests
 {
 
 	[TestFixture] public class AddEmployeeCmdTest

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ska-codesmell-test")]
+[assembly: AssemblyTitle("ska-codesmell.UnitTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ska-codesmell-test")]
+[assembly: AssemblyProduct("ska-codesmell.UnitTests")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f6d06e6c-2df9-4124-9686-da2a162795b9")]
+[assembly: Guid("420269b3-0e7a-4e2f-8fd1-4c69f15e47f9")]
 
 // Version information for an assembly consists of the following four values:
 //

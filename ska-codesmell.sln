@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ska-codesmell", "ska-codesmell\ska-codesmell.csproj", "{4210D488-C3B1-4684-905B-DEF775C92695}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ska-codesmell-test", "ska-codesmell-test\ska-codesmell-test.csproj", "{76EFD91E-3315-42FA-841D-94D137F4B40C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ska-codesmell.UnitTests", "ska-codesmell.UnitTests\ska-codesmell.UnitTests.csproj", "{30E8C125-EEC3-40A7-B3AF-212878A0383E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{4210D488-C3B1-4684-905B-DEF775C92695}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4210D488-C3B1-4684-905B-DEF775C92695}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4210D488-C3B1-4684-905B-DEF775C92695}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76EFD91E-3315-42FA-841D-94D137F4B40C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76EFD91E-3315-42FA-841D-94D137F4B40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76EFD91E-3315-42FA-841D-94D137F4B40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76EFD91E-3315-42FA-841D-94D137F4B40C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30E8C125-EEC3-40A7-B3AF-212878A0383E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30E8C125-EEC3-40A7-B3AF-212878A0383E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30E8C125-EEC3-40A7-B3AF-212878A0383E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30E8C125-EEC3-40A7-B3AF-212878A0383E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
