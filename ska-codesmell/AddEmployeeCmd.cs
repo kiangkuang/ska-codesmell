@@ -8,7 +8,7 @@ namespace ska_codesmell
         private readonly string _address;
         private readonly string _city;
         private readonly string _state;
-        private readonly string _yearlySalary;
+        private readonly int _yearlySalary;
 
         public AddEmployeeCmd(string name, string address, string city, string state, int yearlySalary)
         {
@@ -16,7 +16,7 @@ namespace ska_codesmell
             _address = address;
             _city = city;
             _state = state;
-            _yearlySalary = yearlySalary + "";
+            _yearlySalary = yearlySalary;
         }
 
         private int GetSize()
@@ -28,7 +28,7 @@ namespace ska_codesmell
                    _address.Length + 1 +
                    _city.Length + 1 +
                    _state.Length + 1 +
-                   _yearlySalary.Length + 1 +
+                   _yearlySalary.ToString().Length + 1 +
                    Constants.Footer.Length;
         }
 
