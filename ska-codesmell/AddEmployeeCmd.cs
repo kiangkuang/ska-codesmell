@@ -26,7 +26,7 @@ namespace GeneralizationCs
 			this._yearlySalary = yearlySalary + "";
 		}
 
-		private int getSize() {
+		private int GetSize() {
 			return Header.Length +  SizeLength +  CmdByteLength + Footer.Length +
 				_name.Length + 1 +
 				_address.Length + 1 +
@@ -38,7 +38,7 @@ namespace GeneralizationCs
 
 		public void Write(TextWriter writer) {
 			writer.Write(Header);
-			writer.Write(getSize());
+			writer.Write(GetSize());
 			writer.Write(CommandChar);
 			writer.Write(_name);
 			writer.Write((char)0x00);
