@@ -4,11 +4,6 @@ namespace ska_codesmell
 {
     public class AddEmployeeCmd
     {
-        private static readonly char[] Header = { (char)0xde, (char)0xad };
-        private static readonly char[] CommandChar = { (char)0x02 };
-        private static readonly char[] Footer = { (char)0xbe, (char)0xef };
-        private const int SizeLength = 1;
-        private const int CmdByteLength = 1;
         private readonly string _name;
         private readonly string _address;
         private readonly string _city;
@@ -26,7 +21,7 @@ namespace ska_codesmell
 
         private int GetSize()
         {
-            return Header.Length + SizeLength + CmdByteLength + Footer.Length +
+            return Constants.Header.Length + Constants.SizeLength + Constants.CmdByteLength + Constants.Footer.Length +
                 _name.Length + 1 +
                 _address.Length + 1 +
                 _city.Length + 1 +
@@ -36,9 +31,9 @@ namespace ska_codesmell
 
         public void Write(TextWriter writer)
         {
-            writer.Write(Header);
+            writer.Write(Constants.Header);
             writer.Write(GetSize());
-            writer.Write(CommandChar);
+            writer.Write(Constants.CommandChar);
             writer.Write(_name);
             writer.Write((char)0x00);
             writer.Write(_address);
@@ -49,7 +44,7 @@ namespace ska_codesmell
             writer.Write((char)0x00);
             writer.Write(_yearlySalary);
             writer.Write((char)0x00);
-            writer.Write(Footer);
+            writer.Write(Constants.Footer);
         }
     }
 }

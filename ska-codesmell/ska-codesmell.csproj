@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddEmployeeCmd.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="LoginCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
