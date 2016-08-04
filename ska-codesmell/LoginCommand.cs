@@ -23,7 +23,7 @@ namespace ska_codesmell
         {
             writer.Write(Constants.Header);
             writer.Write(GetSize());
-            writer.Write(Constants.CommandChar);
+            writer.Write(Constants.CommandCharLogin);
             writer.Write(_name);
             writer.Write((char)0x00);
             writer.Write(_password);
