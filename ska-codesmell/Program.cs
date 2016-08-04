@@ -1,6 +1,6 @@
 using System;
 
-namespace GeneralizationCs
+namespace ska_codesmell
 {
 	/// <summary>
 	/// Summary description for Program.

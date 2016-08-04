@@ -2,7 +2,7 @@ using System;
 using System.IO;
 
 
-namespace GeneralizationCs
+namespace ska_codesmell
 {
 	public class LoginCommand
 	{

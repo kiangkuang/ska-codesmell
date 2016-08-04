@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using NUnit.Framework;
 
-namespace GeneralizationCs
+namespace ska_codesmell
 {
 
 	[TestFixture] public class LoginCommandTest 
