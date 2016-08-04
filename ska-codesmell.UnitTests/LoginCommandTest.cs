@@ -14,7 +14,7 @@ namespace ska_codesmell.UnitTests
 
             expectedWriter.Write(new char[] { (char)0xde, (char)0xad });
             expectedWriter.Write(name.Length + password.Length + 8);
-            expectedWriter.Write(new char[] { (char)0x01 });
+            expectedWriter.Write((char)0x01);
             expectedWriter.Write(name);
             expectedWriter.Write((char)0x00);
             expectedWriter.Write(password);
@@ -26,9 +26,11 @@ namespace ska_codesmell.UnitTests
             StringWriter writer = new StringWriter();
             cmd.Write(writer);
 
+            string actual = writer.ToString();
+
             for (int i = 0; i < expected.Length; i++)
             {
-                Assert.AreEqual(expected[i], writer.ToString()[i], "comparison failed at byte number " + i);
+                Assert.AreEqual(expected[i], actual[i], "comparison failed at byte number " + i);
             }
         }
     }

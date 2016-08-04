@@ -3,25 +3,41 @@ using NUnit.Framework;
 
 namespace ska_codesmell.UnitTests
 {
+    [TestFixture]
+    public class AddEmployeeCmdTest
+    {
+        [TestCase("John Smith", "456 His House", "Autumnland", "NZ", 12345)]
+        [TestCase("Fred Brooks", "123 My House", "Springfield", "IL", 72000)]
+        public void TestAddEmployeeCmdWriter(string name, string address, string city, string state, int yearlySalary)
+        {
+            StringWriter expectedWriter = new StringWriter();
 
-	[TestFixture] public class AddEmployeeCmdTest
-	{
-		[Test] public void SentCorrectly() {
-			char [] knownGood = { (char)0xde, (char)0xad, (char)53, (char)50, (char)0x02,
-                                    'F', 'r', 'e', 'd', ' ', 'B', 'r', 'o', 'o', 'k', 's', (char)0x00,
-                                    '1', '2', '3', ' ', 'M', 'y', ' ', 'H', 'o', 'u', 's', 'e', (char)0x00,
-                                    'S', 'p', 'r', 'i', 'n', 'g', 'f', 'i', 'e', 'l', 'd', (char)0x00,
-                                    'I', 'L', (char)0x00,
-                                    '7', '2', '0', '0', '0', (char)0x00,
-                                    (char)0xbe, (char)0xef };
+            expectedWriter.Write(new char[] { (char)0xde, (char)0xad });
+            expectedWriter.Write(name.Length + address.Length + city.Length + state.Length + yearlySalary.ToString().Length + 11);
+            expectedWriter.Write((char)0x02);
+            expectedWriter.Write(name);
+            expectedWriter.Write((char)0x00);
+            expectedWriter.Write(address);
+            expectedWriter.Write((char)0x00);
+            expectedWriter.Write(city);
+            expectedWriter.Write((char)0x00);
+            expectedWriter.Write(state);
+            expectedWriter.Write((char)0x00);
+            expectedWriter.Write(yearlySalary);
+            expectedWriter.Write(new char[] { (char)0x00, (char)0xbe, (char)0xef });
 
-			AddEmployeeCmd cmd = new AddEmployeeCmd("Fred Brooks", "123 My House", "Springfield", "IL", 72000);
-			StringWriter writer = new StringWriter();
-			cmd.Write(writer);
+            string expected = expectedWriter.ToString();
 
-			for( int i = 0; i < knownGood.Length; i++ ) {
-				Assert.AreEqual(knownGood[i], writer.ToString()[i], "comparison failed at byte number " + i );
-			}
-		}
-	}
+            AddEmployeeCmd cmd = new AddEmployeeCmd(name, address, city, state, yearlySalary);
+            StringWriter writer = new StringWriter();
+            cmd.Write(writer);
+
+            string actual = writer.ToString();
+
+            for (int i = 0; i < expected.Length; i++)
+            {
+                Assert.AreEqual(expected[i], actual[i], "comparison failed at byte number " + i);
+            }
+        }
+    }
 }
