@@ -19,11 +19,11 @@ namespace GeneralizationCs
 
 		public AddEmployeeCmd(string name, string address, string city, string state, int yearlySalary)
 		{
-			this._name = name;
-			this._address = address;
-			this._city = city;
-			this._state = state;
-			this._yearlySalary = yearlySalary + "";
+			_name = name;
+			_address = address;
+			_city = city;
+			_state = state;
+			_yearlySalary = yearlySalary + "";
 		}
 
 		private int GetSize() {
