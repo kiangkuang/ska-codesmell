@@ -5,7 +5,6 @@ namespace ska_codesmell
     public class Command
     {
         private const int SizeLength = 1;
-        private const int CmdByteLength = 1;
         private static readonly char[] Header = { (char)0xde, (char)0xad };
         private static readonly char[] Footer = { (char)0xbe, (char)0xef };
 
@@ -22,7 +21,7 @@ namespace ska_codesmell
         {
             int size = Header.Length +
                        SizeLength +
-                       CmdByteLength +
+                       _CommandChar.Length +
                        Footer.Length;
 
             foreach (string parameter in _Parameters)
@@ -38,11 +37,13 @@ namespace ska_codesmell
             writer.Write(Header);
             writer.Write(GetSize());
             writer.Write(_CommandChar);
+
             foreach (string parameter in _Parameters)
             {
                 writer.Write(parameter);
                 writer.Write((char)0x00);
             }
+
             writer.Write(Footer);
         }
     }
